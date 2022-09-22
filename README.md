@@ -1,6 +1,6 @@
 # Capstone-Project-2022
 
-Project Description:
+ Description:
 The goal of our capstone project is to study the impact of COVID-19 on the nature of technological innovation using Google Patent’s text and location data using NLP techniques
 
 Project Guide:
