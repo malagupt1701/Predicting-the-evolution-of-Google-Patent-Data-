@@ -7,7 +7,7 @@ Project Guide:
 Dr. Jorge Guzman (https://www8.gsb.columbia.edu/cbs-directory/detail/jag2367)
 
 Contributors:
-- Shreya Verma (y so serious)
+- Shreya Verma
 - Malaika Gupta
 - Sanjeev Tewani
 - Arunit Maity
