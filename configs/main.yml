@@ -1,0 +1,9 @@
+name: main
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - pandas
+  - numpy
+  - jupyter
+  - nltk
