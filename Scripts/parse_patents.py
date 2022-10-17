@@ -41,12 +41,20 @@ def prepare_directory(infile, do_prepare):
         os.mkdir(path)
 
     parsed_path = os.path.join(os.path.expanduser("~"), "data", basename, "F_")
-
-    awk_script_str = r'/<?xml/{close(x="' + parsed_path + r'"i); i++;}{print > x;}'
-    if do_prepare:
-        subprocess.run(["awk", awk_script_str, infile])
-    else:
+    if not do_prepare:
         print("Skipping directory processing, run " + awk_script_str + " if not already done")
+        return parsed_path
+
+    counter = -1
+    out_file = None
+    with open(infile, "r") as f:
+        for line in f.readlines():
+            if line.startswith(r"<?xml"):
+                if out_file is not None:
+                    out_file.close()
+                counter += 1
+                out_file = open(parsed_path + str(counter), "w")
+            print(line, file=out_file)
     return parsed_path
 
 def extract_text(dico):
