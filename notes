@@ -1,0 +1,11 @@
+after running
+awk '/<?xml/{x="~/data/ipa220915/ipa220915_"i++;}{print > x;}' ~/data/ipa220915/ipa220915.xml
+
+
+
+
+import xmltodict
+with open("~/data/ipa220915/ipa220915_2899") as f:
+    x = xmltodict.parse(f.read())
+
+print(list(x["us-patent-application"]["us-bibliographic-data-application"]["us-parties"]["us-applicants"].values()))
